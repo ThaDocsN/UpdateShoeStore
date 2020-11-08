@@ -12,4 +12,8 @@
     <string name="to_the_shoe">Welcome to the Shoe</string>
     <string name="continue_to_instructions">Instructions</string>
     <string name="instructions_fragment">Instructions Fragment</string>
+    <string name="instructions">Instructions</string>
+    <string name="on_the_next_page_click_the_plus_button">On the next page, click the plus button to add a shoe. Fill out the form and click save.</string>
+    <string name="show_shoes">Show Shoes</string>
+    <string name="shoes">Shoes</string>
 </resources>

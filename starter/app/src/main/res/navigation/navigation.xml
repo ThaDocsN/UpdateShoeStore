@@ -27,5 +27,14 @@
         android:id="@+id/instructions_destination"
         android:name="com.udacity.shoestore.models.instructions.InstructionsFragment"
         android:label="@string/instructions_fragment"
-        tools:layout="@layout/instructions_fragment" />
+        tools:layout="@layout/instructions_fragment" >
+        <action
+            android:id="@+id/action_instructions_destination_to_shoeListFragment"
+            app:destination="@id/shoeList_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeList_destination"
+        android:name="com.udacity.shoestore.models.shoes.ShoeListFragment"
+        android:label="@string/shoes"
+        tools:layout="@layout/shoe_list_fragment" />
 </navigation>
