@@ -18,5 +18,14 @@
         android:id="@+id/greeting_destination"
         android:name="com.udacity.shoestore.models.welcome.GreetingFragment"
         android:label="@string/greeting_fragment"
-        tools:layout="@layout/greeting_fragment" />
+        tools:layout="@layout/greeting_fragment" >
+        <action
+            android:id="@+id/action_greeting_destination_to_instructionsFragment"
+            app:destination="@id/instructions_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructions_destination"
+        android:name="com.udacity.shoestore.models.instructions.InstructionsFragment"
+        android:label="@string/instructions_fragment"
+        tools:layout="@layout/instructions_fragment" />
 </navigation>
