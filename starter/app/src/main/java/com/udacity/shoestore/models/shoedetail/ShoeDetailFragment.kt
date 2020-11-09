@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
@@ -16,7 +17,7 @@ import com.udacity.shoestore.models.Shoe
 class ShoeDetailFragment : Fragment() {
 
     private lateinit var binding: ShoeDetailFragmentBinding
-    private val viewModel:ShoesViewModel by viewModels()
+    private val viewModel:ShoesViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -40,10 +41,10 @@ class ShoeDetailFragment : Fragment() {
     }
 
     private fun getShoe() {
-        val name        = binding.tvShoeName.text.toString()
-        val size        = binding.tvShoeSize.text.toString()
-        val company     = binding.tvShoeCompany.text.toString()
-        val description = binding.tvShoeDescription.text.toString()
+        val name        = binding.etShoeName.text.toString()
+        val size        = binding.etShoeSize.text.toString()
+        val company     = binding.etShoeCompany.text.toString()
+        val description = binding.etShoeDescription.text.toString()
 
         val shoe = Shoe(name, size.toDouble(), company, description)
         viewModel.addShoe(shoe)

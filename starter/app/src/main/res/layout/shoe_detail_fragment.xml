@@ -18,40 +18,76 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="16dp"
-            android:text="name" />
+            android:text="@string/shoe_name" />
+
+        <EditText
+            android:id="@+id/et_shoe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/shoe_name"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/tv_shoe_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="4" />
+            android:text="@string/shoe_size" />
+
+        <EditText
+            android:id="@+id/et_shoe_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/shoe_size"
+            android:inputType="number"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/tv_shoe_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="company" />
+            android:text="@string/shoe_company" />
+
+        <EditText
+            android:id="@+id/et_shoe_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/shoe_company"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/tv_shoe_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="description" />
+            android:text="@string/shoe_description" />
+
+        <EditText
+            android:id="@+id/et_shoe_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/shoe_description"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancel" />
+            android:text="@string/cancel" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save" />
+            android:text="@string/save" />
 
     </LinearLayout>
 </layout>

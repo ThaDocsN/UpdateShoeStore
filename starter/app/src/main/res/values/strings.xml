@@ -16,4 +16,11 @@
     <string name="on_the_next_page_click_the_plus_button">On the next page, click the plus button to add a shoe. Fill out the form and click save.</string>
     <string name="show_shoes">Show Shoes</string>
     <string name="shoes">Shoes</string>
+    <string name="add_plus_button">add plus button</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_company">Shoe Company</string>
+    <string name="shoe_description">Shoe Description</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
