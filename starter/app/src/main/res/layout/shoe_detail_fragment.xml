@@ -5,7 +5,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin"
         android:orientation="vertical"
         tools:context=".ShoeDetailFragment">
 
@@ -18,61 +18,61 @@
             android:text="@string/shoe_name" />
 
         <EditText
-            android:layout_marginBottom="8dp"
             android:id="@+id/et_shoe_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin"
             android:ems="10"
             android:hint="@string/shoe_name"
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_marginTop="8dp"
             android:id="@+id/tv_shoe_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
             android:text="@string/shoe_size" />
 
         <EditText
-            android:layout_marginBottom="8dp"
             android:id="@+id/et_shoe_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin"
             android:ems="10"
             android:hint="@string/shoe_size"
             android:importantForAutofill="no"
             android:inputType="number" />
 
         <TextView
-            android:layout_marginTop="8dp"
             android:id="@+id/tv_shoe_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
             android:text="@string/shoe_company" />
 
         <EditText
-            android:layout_marginBottom="8dp"
             android:id="@+id/et_shoe_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin"
             android:ems="10"
             android:hint="@string/shoe_company"
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_marginTop="8dp"
             android:id="@+id/tv_shoe_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
             android:text="@string/shoe_description" />
 
         <EditText
-            android:layout_marginBottom="8dp"
             android:id="@+id/et_shoe_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin"
             android:ems="10"
             android:hint="@string/shoe_description"
             android:importantForAutofill="no"
