@@ -21,7 +21,8 @@
         tools:layout="@layout/greeting_fragment" >
         <action
             android:id="@+id/action_greeting_destination_to_instructionsFragment"
-            app:destination="@id/instructions_destination" />
+            app:destination="@id/instructions_destination"
+            app:popUpTo="@id/login_destination" />
     </fragment>
     <fragment
         android:id="@+id/instructions_destination"
@@ -30,7 +31,10 @@
         tools:layout="@layout/instructions_fragment" >
         <action
             android:id="@+id/action_instructions_destination_to_shoeListFragment"
-            app:destination="@id/shoeList_destination" />
+            app:destination="@id/shoeList_destination"
+            app:popUpTo="@id/login_destination"
+            app:popUpToInclusive="false" />
+
     </fragment>
     <fragment
         android:id="@+id/shoeList_destination"
@@ -48,6 +52,8 @@
         tools:layout="@layout/shoe_detail_fragment" >
         <action
             android:id="@+id/action_shoe_detail_destination_to_shoeList_destination"
-            app:destination="@id/shoeList_destination" />
+            app:destination="@id/shoeList_destination"
+            app:popUpTo="@id/shoeList_destination"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

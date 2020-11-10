@@ -40,4 +40,9 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host_fragment))
                 || super.onOptionsItemSelected(item)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp()
+    }
 }
