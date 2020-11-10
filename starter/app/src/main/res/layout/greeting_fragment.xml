@@ -3,31 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
         tools:context=".GreetingFragment">
 
         <TextView
             android:id="@+id/tv_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
             android:text="@string/welcome"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:textSize="18sp"
             android:layout_height="0dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="@string/to_the_shoe" />
+            android:text="@string/to_the_shoe"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
             android:text="@string/continue_to_instructions" />
     </LinearLayout>
 </layout>
