@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Store</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_email">Login Email:</string>
@@ -23,4 +23,5 @@
     <string name="shoe_name">Shoe Name</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="logout">Logout</string>
 </resources>

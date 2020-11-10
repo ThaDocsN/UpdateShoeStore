@@ -31,14 +31,13 @@ class ShoeListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
 
-        viewModel.shoes.observe(viewLifecycleOwner, Observer {shoes ->
-            Timber.i(shoes.size.toString())
+        viewModel.shoes.observe(viewLifecycleOwner, { shoes ->
             for (shoe in shoes){
-                Timber.i(shoe.name)
                 binding.llShoeContainer.addView(addTextView(shoe))
-                binding.llShoeContainer.refreshDrawableState()
+                Timber.i(shoe.name)
             }
         })
+
 
         binding.floatingActionButton2.setOnClickListener {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListDestinationToShoeDetailFragment())
