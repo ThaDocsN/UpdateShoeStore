@@ -56,7 +56,7 @@ class ShoeListFragment : Fragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-            text = shoe.name
+            text = " Shoe name: ${shoe.name} \n Shoe size: ${shoe.size} \n Company Name: ${shoe.company} \n Shoe Description: ${shoe.description} \n"
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
             setTextColor(Color.BLACK)
         }
