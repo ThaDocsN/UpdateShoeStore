@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -26,12 +29,20 @@ class MainActivity : AppCompatActivity() {
 
 
         val navController = this.findNavController(R.id.nav_host_fragment)
+       /* navController.addOnDestinationChangedListener{nc:NavController, nd:NavDestination, args:Bundle? ->
+            if (nd.id ==nc.graph.startDestination){
+                val  menuItem = myMenu.findItem(R.id.login_destination).setVisible(false)
+            }else{
+                val  menuItem = myMenu.findItem(R.id.login_destination).setVisible(true)
+
+            }
+        }*/
+
         appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupWithNavController(toolbar, navController,appBarConfiguration)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
         menuInflater.inflate(R.menu.logout_menu, menu)
         return true
     }
