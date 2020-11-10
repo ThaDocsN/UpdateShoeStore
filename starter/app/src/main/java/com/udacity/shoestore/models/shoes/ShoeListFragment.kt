@@ -34,8 +34,10 @@ class ShoeListFragment : Fragment() {
         viewModel.shoes.observe(viewLifecycleOwner, { shoes ->
             for (shoe in shoes){
                 binding.llShoeContainer.addView(addTextView(shoe))
+
                 Timber.i(shoe.name)
             }
+            binding.root.invalidate()
         })
 
 
@@ -55,7 +57,7 @@ class ShoeListFragment : Fragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
             text = shoe.name
-            setTextSize(TypedValue.COMPLEX_UNIT_SP, 40f)
+            setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
             setTextColor(Color.BLACK)
         }
         return textView
