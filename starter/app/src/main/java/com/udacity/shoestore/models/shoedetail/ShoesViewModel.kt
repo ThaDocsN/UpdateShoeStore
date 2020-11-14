@@ -3,7 +3,7 @@ package com.udacity.shoestore.models.shoedetail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.models.data.Shoe
 import timber.log.Timber
 
 class ShoesViewModel : ViewModel() {

@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
-import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.models.data.Shoe
 
 
 class ShoeDetailFragment : Fragment() {
@@ -46,7 +45,7 @@ class ShoeDetailFragment : Fragment() {
         val company     = binding.etShoeCompany.text.toString()
         val description = binding.etShoeDescription.text.toString()
 
-        val shoe = Shoe(name, size.toDouble(), company, description)
+        val shoe = Shoe(name =name, size = size.toDouble(), company = company, description = description)
         viewModel.addShoe(shoe)
     }
 }

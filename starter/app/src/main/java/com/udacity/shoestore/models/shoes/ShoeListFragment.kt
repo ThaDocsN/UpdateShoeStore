@@ -15,7 +15,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
-import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.models.data.Shoe
 import com.udacity.shoestore.models.shoedetail.ShoesViewModel
 import timber.log.Timber
 
