@@ -20,19 +20,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_add" />
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shoe_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin"
-            tools:layout_editor_absoluteX="82dp"
-            tools:layout_editor_absoluteY="167dp">
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-            <LinearLayout
-                android:id="@+id/ll_shoe_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:orientation="vertical" />
-        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

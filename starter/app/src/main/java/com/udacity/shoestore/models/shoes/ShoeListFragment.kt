@@ -39,13 +39,15 @@ class ShoeListFragment : Fragment() {
 
         val viewModel: ShoesViewModel by activityViewModels{ShoeViewModelFactory(dataSource, application)}
 
-        viewModel.shoeList.observe(viewLifecycleOwner, { shoes ->
-            for (shoe in shoes) {
-                binding.llShoeContainer.addView(addTextView(shoe))
+        val adapter = ShoeAdapter()
+        binding.rvShoeList.adapter = adapter
 
-                Timber.i(shoe.name)
-            }
-            binding.root.invalidate()
+
+        viewModel.shoeList.observe(viewLifecycleOwner, { shoes ->
+           shoes?.let {
+               Timber.i(adapter.itemCount.toString())
+               adapter.submitList(shoes)
+           }
         })
 
 
@@ -55,26 +57,4 @@ class ShoeListFragment : Fragment() {
 
         return binding.root
     }
-
-    @SuppressLint("SetTextI18n")
-    private fun addTextView(shoe: Shoe): TextView? {
-        val textView = TextView(context)
-
-        textView.apply {
-            layoutParams = LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            val sb = StringBuilder()
-            text = sb.appendLine("Shoe name: ${shoe.name}")
-                .appendLine("Shoe size: ${shoe.size}")
-                .appendLine("Company Name: ${shoe.company}")
-                .append("Shoe Description: ${shoe.description}")
-
-            setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
-            setTextColor(Color.BLACK)
-        }
-        return textView
-    }
-
 }
