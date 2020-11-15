@@ -16,13 +16,14 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.models.data.Shoe
+import com.udacity.shoestore.models.data.ShoeDatabase
+import com.udacity.shoestore.models.shoedetail.ShoeViewModelFactory
 import com.udacity.shoestore.models.shoedetail.ShoesViewModel
 import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
 
     private lateinit var binding: ShoeListFragmentBinding
-    private val viewModel: ShoesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +32,14 @@ class ShoeListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
 
-        viewModel.shoes.observe(viewLifecycleOwner, { shoes ->
+        binding.lifecycleOwner = this
+
+        val application = requireNotNull(this.activity).application
+        val dataSource = ShoeDatabase.getInstance(application).shoeDao
+
+        val viewModel: ShoesViewModel by activityViewModels{ShoeViewModelFactory(dataSource, application)}
+
+        viewModel.shoeList.observe(viewLifecycleOwner, { shoes ->
             for (shoe in shoes) {
                 binding.llShoeContainer.addView(addTextView(shoe))
 

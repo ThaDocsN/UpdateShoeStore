@@ -1,23 +1,37 @@
 package com.udacity.shoestore.models.shoedetail
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
 import com.udacity.shoestore.models.data.Shoe
+import com.udacity.shoestore.models.data.ShoeDatabaseDao
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class ShoesViewModel : ViewModel() {
+class ShoesViewModel(private val database:ShoeDatabaseDao, application: Application) : AndroidViewModel(application) {
 
-    private var _shoes = MutableLiveData<ArrayList<Shoe>>()
-    val shoes: LiveData<ArrayList<Shoe>>
-        get() = _shoes
+    val shoeList = database.getAllShoes()
 
-    init {
-        _shoes.value = ArrayList()
-    }
 
     fun addShoe(shoe: Shoe) {
-        _shoes.value?.add(shoe)
-        Timber.i(shoes.value.toString())
+        viewModelScope.launch {
+            insertShoe(shoe)
+        }
+    }
+
+    private suspend fun insertShoe(shoe: Shoe) {
+        database.insert(shoe)
+    }
+
+}
+
+class ShoeViewModelFactory(
+    private val dataSource: ShoeDatabaseDao,
+    private val application: Application) : ViewModelProvider.Factory {
+    @Suppress("unchecked_cast")
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(ShoesViewModel::class.java)) {
+            return ShoesViewModel(dataSource, application) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
