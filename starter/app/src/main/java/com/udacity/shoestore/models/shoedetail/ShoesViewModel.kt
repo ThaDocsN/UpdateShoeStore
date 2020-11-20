@@ -9,8 +9,15 @@ import timber.log.Timber
 
 class ShoesViewModel(private val database:ShoeDatabaseDao, application: Application) : AndroidViewModel(application) {
 
+   private var _selectedShoe = MutableLiveData<Shoe>()
+    val selectedShoe:LiveData<Shoe> = _selectedShoe
+
     val shoeList = database.getAllShoes()
 
+
+    fun onShoeClicked(shoe: Shoe){
+        _selectedShoe.value = shoe
+    }
 
     fun addShoe(shoe: Shoe) {
         viewModelScope.launch {

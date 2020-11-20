@@ -8,11 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.udacity.shoestore.databinding.ItemShoeListBinding
 import com.udacity.shoestore.models.data.Shoe
 
-class ShoeAdapter:ListAdapter<Shoe, ShoeAdapter.ViewHolder>(ShoeDiffCallback()) {
+class ShoeAdapter(private val clickListener:ShoeListener):ListAdapter<Shoe, ShoeAdapter.ViewHolder>(ShoeDiffCallback()) {
     class ViewHolder private constructor(val binding: ItemShoeListBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(shoe: Shoe){
+        fun bind(clickListener: ShoeListener, shoe: Shoe){
             binding.shoe = shoe
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
 
@@ -30,7 +31,7 @@ class ShoeAdapter:ListAdapter<Shoe, ShoeAdapter.ViewHolder>(ShoeDiffCallback()) 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(clickListener, getItem(position))
     }
 }
 
@@ -43,4 +44,8 @@ class ShoeDiffCallback:DiffUtil.ItemCallback<Shoe>() {
         return oldItem == newItem
     }
 
+}
+
+class ShoeListener(val clickListener:(shoe:Shoe) -> Unit){
+    fun onClick(shoe: Shoe) = clickListener(shoe)
 }

@@ -39,9 +39,15 @@ class ShoeListFragment : Fragment() {
 
         val viewModel: ShoesViewModel by activityViewModels{ShoeViewModelFactory(dataSource, application)}
 
-        val adapter = ShoeAdapter()
+        val adapter = ShoeAdapter(ShoeListener {
+            viewModel.onShoeClicked(it)
+        })
+
         binding.rvShoeList.adapter = adapter
 
+        viewModel.selectedShoe.observe(viewLifecycleOwner, {
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListDestinationToDisplayShoeDestination(it))
+        })
 
         viewModel.shoeList.observe(viewLifecycleOwner, { shoes ->
            shoes?.let {

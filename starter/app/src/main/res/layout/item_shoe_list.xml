@@ -6,12 +6,16 @@
         <variable
             name="shoe"
             type="com.udacity.shoestore.models.data.Shoe" />
+        <variable
+            name="clickListener"
+            type="com.udacity.shoestore.models.shoes.ShoeListener" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:onClick="@{() -> clickListener.onClick(shoe)}">
 
         <TextView
             android:id="@+id/tv_item_name"
