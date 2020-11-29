@@ -1,14 +1,10 @@
 package com.udacity.shoestore
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -29,14 +25,6 @@ class MainActivity : AppCompatActivity() {
 
 
         val navController = this.findNavController(R.id.nav_host_fragment)
-       /* navController.addOnDestinationChangedListener{nc:NavController, nd:NavDestination, args:Bundle? ->
-            if (nd.id ==nc.graph.startDestination){
-                val  menuItem = myMenu.findItem(R.id.login_destination).setVisible(false)
-            }else{
-                val  menuItem = myMenu.findItem(R.id.login_destination).setVisible(true)
-
-            }
-        }*/
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupWithNavController(toolbar, navController,appBarConfiguration)
@@ -56,4 +44,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
     }
+
+
 }

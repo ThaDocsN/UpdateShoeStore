@@ -13,7 +13,7 @@ class LoginViewModel : ViewModel() {
     val onCreateButton: LiveData<Boolean> = _onCreateButton
 
     init {
-        _onLoginButton.value = false
+        _onLoginButton.value  = false
         _onCreateButton.value = false
     }
 
